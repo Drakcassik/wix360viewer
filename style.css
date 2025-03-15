@@ -642,7 +642,7 @@ model-viewer {
   /* Viewer = 60% da tela */
   .viewer-box {
     flex: none; /* Sobrepõe o 'flex:3' do desktop */
-    height: 60vh;
+    height: 70vh;
     min-height: auto; /* Remove o min-height fixo do desktop */
     border: 2px solid #ddd;
   }
@@ -666,7 +666,7 @@ model-viewer {
 
   /* Ajusta o tamanho dos summaries dos details */
   .menu-box summary {
-    font-size: 1.2rem;
+    font-size: 0,8rem;
     padding: 8px;
   }
 
@@ -686,8 +686,8 @@ model-viewer {
   /* Reduz o tamanho dos botões de acessórios e cores */
   .accessory-btn,
   .color-btn {
-    padding: 6px 10px;
-    font-size: 1rem;
+    padding: 3px 6px;
+    font-size: 0,5rem;
   }
 }
 
