@@ -584,15 +584,11 @@ transform: scale(1.05);
 ========================================= */
 
 .page4-container {
-  /* Empurra para baixo, pois o header é fixo */
-  margin-top: 10px;
-  
-  /* Disposição lado a lado (desktop) */
-  display: flex;
+  /* Layout Desktop */
+  margin-top: 10px;       /* Empurra para baixo, pois o header é fixo */
+  display: flex;          /* Disposição lado a lado (desktop) */
   justify-content: space-between;
-  
-  /* Limita a largura total e centraliza */
-  max-width: 1700px;
+  max-width: 1700px;      /* Limita a largura total e centraliza */
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -600,8 +596,8 @@ transform: scale(1.05);
 }
 
 .viewer-box {
-  flex: 3; /* Ocupa ~3/4 do espaço no desktop */
-  min-height: 780px; /* Altura mínima no desktop */
+  flex: 3;                /* ~3/4 do espaço no desktop */
+  min-height: 780px;      /* Altura mínima no desktop */
   border: 2px solid #ddd;
   display: flex;
   align-items: center;
@@ -611,8 +607,8 @@ transform: scale(1.05);
 }
 
 .menu-box {
-  flex: 1; /* Ocupa ~1/4 do espaço no desktop */
-  min-height: 780px; /* Altura mínima no desktop */
+  flex: 1;                /* ~1/4 do espaço no desktop */
+  min-height: 780px;      /* Altura mínima no desktop */
   border: 2px solid #ddd;
   border-radius: 10px;
   background-color: var(--bg);
@@ -627,69 +623,106 @@ model-viewer {
   border-radius: 10px;
 }
 
-/* Responsividade para telas menores */
+/* ====== Ajustes para telas menores ====== */
 @media (max-width: 768px) {
 
-  /* Coloca o container em coluna para empilhar Viewer e Menu */
+  /* Empilha o viewer e o menu verticalmente */
   .page4-container {
     flex-direction: column;
-    /* Ocupa toda a altura da tela no mobile */
-    height: 100vh;
-    /* Remove ou reduz o gap para evitar espaço extra */
-    gap: 0;
+    height: auto;         /* Permite que o conteúdo cresça conforme necessário */
+    gap: 0;               /* Remove espaçamento extra entre as seções */
+    padding: 0;           /* Pode reduzir padding no mobile para otimizar espaço */
+    margin-top: 0;        /* Se quiser remover a margem extra */
   }
 
-  /* Viewer = 60% da tela */
+  /* Viewer em destaque no topo, ocupando ~40vh */
   .viewer-box {
-    flex: none; /* Sobrepõe o 'flex:3' do desktop */
-    height: 70vh;
-    min-height: auto; /* Remove o min-height fixo do desktop */
-    border: 2px solid #ddd;
+    flex: none;           /* Remove o flex original do desktop */
+    width: 100%;
+    height: 40vh;         /* ~40% da altura da tela (ajuste conforme desejar) */
+    min-height: auto;
+    border: none;         /* Se quiser remover a borda no mobile */
+    border-radius: 0;     /* Remove borda arredondada no mobile (opcional) */
   }
 
-  /* Menu = 40% da tela */
+  /* Menu logo abaixo, com altura automática */
   .menu-box {
-    flex: none; /* Sobrepõe o 'flex:1' do desktop */
-    height: 40vh;
-    min-height: auto; /* Remove o min-height fixo do desktop */
-    border: 2px solid #ddd;
-    overflow-y: auto; /* Permite rolagem se o conteúdo for maior que o container */
-    padding: 10px; /* Reduz o padding para deixar o menu mais compacto */
+    flex: none;
+    width: 100%;
+    min-height: auto;
+    border: none;         /* Remove a borda no mobile (opcional) */
+    border-radius: 0;     /* Remove borda arredondada no mobile (opcional) */
+    box-shadow: none;     /* Remove sombra (opcional) */
+    padding: 20px;        /* Mantém algum padding interno para espaçamento */
   }
 
-  /* Ajusta o tamanho dos títulos no menu */
-  .menu-box h3 {
+  /* ====== Organização interna do Menu ====== */
+
+  /* Exemplo: Área de título do produto e preço */
+  .menu-box .header-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .menu-box .header-area h2 {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  .menu-box .header-area .price-label {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Exemplo: Controles de quantidade e botão de compra */
+  .menu-box .purchase-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  .menu-box .qty-field {
+    width: 70px;
     font-size: 1.4rem;
-    margin-bottom: 8px;
     text-align: center;
   }
-
-  /* Ajusta o tamanho dos summaries dos details */
-  .menu-box summary {
-    font-size: 0,8rem;
-    padding: 8px;
+  .menu-box .btn-purchase {
+    flex: 1;
+    background-color: #800080;
+    color: #fff;
+    padding: 12px;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 8px;
   }
 
-  /* Ajusta o padding do conteúdo interno dos detalhes */
+  /* Ajustando summaries e detalhes (caso use <details>) */
+  .menu-box details {
+    margin-bottom: 10px;
+  }
+  .menu-box summary {
+    font-size: 1.2rem;
+    padding: 8px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
   .menu-box .menu-content {
     padding: 8px;
   }
 
-  /* Ajusta os elementos interativos (select e button) dentro do menu */
-  .menu-box select,
-  .menu-box button {
-    padding: 8px;
-    font-size: 1.2rem;
-    border-radius: 6px;
-  }
-
-  /* Reduz o tamanho dos botões de acessórios e cores */
+  /* Botões de acessório e cor menores no mobile */
   .accessory-btn,
   .color-btn {
-    padding: 3px 6px;
-    font-size: 0,5rem;
+    padding: 6px 10px;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    margin-bottom: 6px;
   }
 }
+
 
 
 
