@@ -36,12 +36,10 @@
         list-style: none;
         transition: background-color 0.3s ease, transform 0.3s ease;
       }
-      /* Hover effect: change background color to purple and scale up */
       .menu-box summary:hover {
         background-color: #800080;
         transform: scale(1.05);
       }
-      /* Remove default marker from summary */
       .menu-box summary::-webkit-details-marker {
         display: none;
       }
@@ -58,49 +56,24 @@
         margin-bottom: 5px;
       }
 
-      /* ---------------------------------------
-         ACCESSORY TOGGLE BUTTONS (On/Off)
-         --------------------------------------- */
-      .accessory-btn {
+      /* Accessory and color buttons */
+      .accessory-btn, .color-btn {
         display: inline-block;
         padding: 8px 12px;
         font-size: 1.4rem;
         text-decoration: none;
-        background: #000; /* OFF = black */
+        background: #000;
         color: #fff;
         border-radius: 5px;
         transition: background-color 0.3s ease, transform 0.3s ease;
       }
-      .accessory-btn:hover {
+      .accessory-btn:hover, .color-btn:hover {
         transform: scale(1.05);
       }
-      .accessory-btn.on {
-        background-color: #800080; /* ON = purple */
+      .accessory-btn.on, .color-btn.on {
+        background-color: #800080;
       }
 
-      /* ---------------------------------------
-         COLOR SELECTION BUTTONS (radio-like)
-         - OFF = black
-         - ON = purple
-         --------------------------------------- */
-      .color-btn {
-        display: inline-block;
-        padding: 8px 12px;
-        font-size: 1.4rem;
-        text-decoration: none;
-        background: #000; /* OFF = black by default */
-        color: #fff;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      }
-      .color-btn:hover {
-        transform: scale(1.05);
-      }
-      .color-btn.on {
-        background-color: #800080; /* ON = purple */
-      }
-
-      /* Ensures that the expanded list pushes other sections downward */
       .menu-box details[open] > summary {
         border-bottom: 1px solid #ddd;
       }
@@ -137,7 +110,6 @@
           <div class="menu-content">
             <select id="variant-selector">
               <option value="default">Default</option>
-              <!-- If you have additional variant names, add them here -->
             </select>
           </div>
         </details>
@@ -148,32 +120,27 @@
           <div class="menu-content">
             <ul>
               <li>
-                <a href="#" class="accessory-btn"
-                   onclick="toggleAccessory('FETHER', this)">
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FETHER', this)">
                   Feather Ostritch
                 </a>
               </li>
               <li>
-                <a href="#" class="accessory-btn"
-                   onclick="toggleAccessory('FEATHER_EAGLE_1', this)">
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_EAGLE_1', this)">
                   Feather Eagle 1
                 </a>
               </li>
               <li>
-                <a href="#" class="accessory-btn"
-                   onclick="toggleAccessory('FEATHER_EAGLE_2', this)">
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_EAGLE_2', this)">
                   Feather Eagle 2
                 </a>
               </li>
               <li>
-                <a href="#" class="accessory-btn"
-                   onclick="toggleAccessory('FEATHER_FAIRY', this)">
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_FAIRY', this)">
                   Feather Fairy
                 </a>
               </li>
               <li>
-                <a href="#" class="accessory-btn"
-                   onclick="toggleAccessory('FEATHER_SPARROW', this)">
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_SPARROW', this)">
                   Feather Sparrow
                 </a>
               </li>
@@ -187,26 +154,22 @@
           <div class="menu-content">
             <ul>
               <li>
-                <a href="#" class="accessory-btn"
-                   onclick="toggleAccessory('BOTTON_HAT_PIN', this)">
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('BOTTON_HAT_PIN', this)">
                   Pin Botton
                 </a>
               </li>
               <li>
-                <a href="#" class="accessory-btn"
-                   onclick="toggleAccessory('AMERICAN_HAT_PIN', this)">
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('AMERICAN_HAT_PIN', this)">
                   Pin American
                 </a>
               </li>
               <li>
-                <a href="#" class="accessory-btn"
-                   onclick="toggleAccessory('ARROW_HAT_PIN', this)">
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('ARROW_HAT_PIN', this)">
                   Pin Arrow
                 </a>
               </li>
               <li>
-                <a href="#" class="accessory-btn"
-                   onclick="toggleAccessory('STAR_HAT_PIN', this)">
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('STAR_HAT_PIN', this)">
                   Pin Star
                 </a>
               </li>
