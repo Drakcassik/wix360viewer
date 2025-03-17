@@ -1,710 +1,353 @@
-:root {
-  --main-color: #353434;
-  --black: #cbcbcb;
-  --bg: #f0f0f0;
-  --border: 0.1rem solid rgba(28, 28, 28, 0.3);
-  font-size: 10px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
-  border: none;
-  text-decoration: none;
-  text-transform: capitlize;
-  transition: 0.2s linear;
-  font-family: "Montserrat", sans-serif;
-}
-
-body {
-  background-color: var(--bg);
-}
-
-section {
-  padding:3rem 2rem;
-  margin: 0 auto;
-  max-width: 1700px;
-}
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  border-bottom: var(--border); 
-}
-
-.header section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.navbar a {
-  margin:0 1rem;
-  font-size: 1.8rem;
-  color: #2d2d2d;
-}
-
-.navbar a:hover {
-  color: var --main-color ;
-  border-bottom: 0.1rem solid var --main-color ;
-  padding-bottom: 0.5rem;
-  font-size: 2rem;
-}
-
-.btn {
-  background: var(--main-color);
-  color:#f1ede4;
-  padding: 1rem 3rem;
-  font-size: 1.7rem;
-  cursor: pointer;
-  margin-top: 1rem;
-  display: inline-block;
-  transition: Background-color 0.3 ease, transfrom 0.3s ease;
-}
-
-.btn:hover {
-  background: #6c0f58;
-  transform:scale(1.05)
-}
-
-.home-container section {
-  display: flex;
-  align-items: center;
-  height: 60vh;
-  
-}
-.home-container {
-  position: relative;
-  width: 100%;
-  height: 70vh;
-  max-height: 1200px;
-  margin-top: 0px;
-  background: url("./img/image_capa3.jpg") no-repeat center; 
-  background-size: cover;
-
-  -webkit-mask-image: radial-gradient(ellipse at center, white 60%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, white 80%, transparent 100%);
-
-}
-
-.content {
-  max-width : 60rem;
-  text-align:center;
-  Color:#171717;
-  font-size: 5rem;
-}
-
-.content {
-  Color: #2e2e2e;
-  font-size: 5rem;
-  transform: translateX(20px);
-}
-
-.logo-gap {
-  /* Empurra para baixo para não ficar escondido atrás do header fixo */
-  margin-top: 100px; /* ajuste conforme desejar */
-  
-  /* Espaço abaixo da logo antes de começar o .home-container */
-  margin-bottom: 0px; 
-  
-  text-align: center; /* Centraliza horizontalmente */
-}
-
-.logo-gap img {
-  width: 300px; /* Tamanho da logo (ajuste à vontade) */
-  height: auto; /* Mantém a proporção */
-}
-
-/* =========================================
- PAGINA 2 
- (Estilos específicos para hat_flat_folded.html)
-========================================= */
-
-/* Container principal da segunda página */
-.page2-container {
-  margin-top: 50px; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Linha das 2 imagens */
-.images-row {
-  display: flex;
-  justify-content: center;
-  gap: 100px;           /* Espaço entre as imagens */
-  margin-bottom: 20px;  /* Espaço abaixo antes dos botões */
-}
-
-/* Cada imagem no tamanho original: 800x600 */
-.image-box {
-  width: 800px;
-  height: 600px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Imagem Brim Flat */
-.brim-flat-image {
-  background-image: url("./img/Brim_Flat.png");
-  Background-size: 65%;
-}
-
-/* Imagem Brim Folded */
-.brim-folded-image {
-  background-image: url("./img/Brim_Folded.png");
-  background-size: 65%;
-}
-
-/* Linha dos 2 botões */
-.buttons-row {
-  display: flex;
-  justify-content: center;
-  gap: 100px;  /* Espaço entre os botões alinhado com as imagens */
-}
-
-/* Estilo dos botões da página 2 */
-.page2-btn {
-  background: #282828;
-  color: #fff;
-  padding: 1rem 2rem;
-  font-size: 1.6rem;
-  border-radius: 5px;
-  cursor: pointer;
-  border: none;
-  transition: background 0.2s;
-  width: 800px;          /* Mesma largura das imagens para alinhamento */
-  text-align: center;
-}
-
-/* Hover para o botão */
-.page2-btn:hover {
-  background: #69225e;
-}
-
-@media (max-width: 768px) {
-  /* Reduz o espaço superior */
-  .page2-container {
-    margin-top: 20px;
-  }
-  
-  /* Empilha as imagens verticalmente e diminui o gap */
-  .images-row {
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 20px;
-    align-items: center;
-  }
-  
-  /* Define a largura das caixas como 90% da tela e força a proporção 4:3 */
-  .image-box {
-    width: 90%;
-    aspect-ratio: 4 / 3;
-  }
-  
-  /* Empilha os botões verticalmente e centraliza */
-  .buttons-row {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
-  
-  /* Botões ocupam 90% da largura */
-  .page2-btn {
-    width: 90%;
-  }
-}
-
-/* =========================================
- PAGINA 3 
- (Estilos específicos para 3pag_360_brim_flat.html)
-========================================= */
-
-/* Container principal da terceira página */
-.page3-container {
-  margin-top: 70px;  /* Aumenta o espaço para alinhar melhor com a logo */
-  display: flex;
-  justify-content: center;
-}
-
-/* Grade com 8 imagens/quadrados (2 linhas x 4 colunas) */
-.images-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas */
-  gap: 40px;                             /* Aumenta o espaço entre as caixas */
-  max-width: 1600px;                     /* Largura máxima do grid */
-}
-
-/* Cada caixa contendo imagem + botão */
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Cada imagem (agora 10% maior) */
-.img-box {
-  width: 330px;  
-  height: 220px;
-  background: url("./img/tumb01.png") no-repeat center center;
-  background-size: cover;
-  margin-bottom: 10px; /* Espaço entre a imagem e o botão */
-}
-
-/* Botões da página 3 */
-.page3-btn {
-  background: var(--main-color);
-  color: #f1ede4;
-  padding: 1rem 2rem;
-  font-size: 1.6rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover para o botão */
-.page3-btn:hover {
-  background-color: #6c0f58; 
-  transform: scale(1.05);
-}
-
-/* RESPONSIVIDADE - telas menores */
-@media (max-width: 768px) {
-  .page3-container {
-    margin-top: 20px;
-  }
-  
-  .images-grid {
-    grid-template-columns: repeat(2, 1fr); /* Em telas menores, 2 colunas */
-    gap: 20px;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  
-  /* Ajuste para as imagens ficarem proporcionais em telas pequenas */
-  .img-box {
-    width: 100%;
-    height: 180px;
-  }
-}
-
-/* =========================================
- PAGINA 3 BRIM FLAT
- (Estilos específicos para 3pag_360_brim_flat.html)
-========================================= */
-
-/* Container principal da terceira página */
-.page3-container {
-margin-top: 70px;
-display: flex;
-justify-content: center;
-}
-
-/* Grade com 8 imagens/quadrados (2 linhas x 4 colunas) */
-.images-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 40px;
-max-width: 1600px;
-}
-
-/* Cada caixa contendo imagem + botão */
-.box {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-/* 
-Estilos das imagens da página 3pag_360_brim_flat.html
-*/
-.img-box {
-width: 330px;
-height: 220px;
-margin-bottom: 10px;
-}
-
-.img-box-1 {
-background: url("./img/tumb01.png") no-repeat center center;
-background-size: cover;
-}
-
-.img-box-2 {
-background: url("./img/tumb02.png") no-repeat center center;
-background-size: cover;
-}
-
-.img-box-3 {
-background: url("./img/tumb03.png") no-repeat center center;
-background-size: cover;
-}
-
-.img-box-4 {
-background: url("./img/tumb04.png") no-repeat center center;
-background-size: cover;
-}
-
-.img-box-5 {
-background: url("./img/TRABALHANDO.png") no-repeat center center;
-background-size: cover;
-}
-
-.img-box-6 {
-background: url("./img/TRABALHANDO.png") no-repeat center center;
-background-size: cover;
-}
-
-.img-box-7 {
-background: url("./img/TRABALHANDO.png") no-repeat center center;
-background-size: cover;
-}
-
-.img-box-8 {
-background: url("./img/TRABALHANDO.png") no-repeat center center;
-background-size: cover;
-}
-
-/* Botões da página 3 */
-.page3-btn {
-background: var(--main-color);
-color: #f1ede4;
-padding: 1rem 2rem;
-font-size: 1.6rem;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.page3-btn:hover {
-background-color: #6c0f58;
-transform: scale(1.05);
-}
-
-/* RESPONSIVIDADE - telas menores */
-@media (max-width: 768px) {
-.page3-container {
-  margin-top: 20px;
-}
-
-.images-grid {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-.img-box {
-  width: 100%;
-  height: 180px;
-}
-}
-
-/* =========================================
- PAGINA 3.1 BRIM FOLDED
- (Estilos específicos para 3pag_360_brim_folded.html)
-========================================= */
-
-.page4-container {
-margin-top: 70px;
-display: flex;
-justify-content: center;
-}
-
-/* Grade com 8 imagens */
-.page4-container .images-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 40px;
-max-width: 1600px;
-}
-
-/* Cada caixa contendo imagem + botão */
-.page4-container .box {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-/* 
-Estilos das imagens da página 3pag_360_brim_folded.html 
-(Diferente da página "Brim Flat")
-*/
-.page4-container .img-box {
-width: 330px;
-height: 220px;
-margin-bottom: 10px;
-}
-
-.page4-container .img-box-1 {
-background: url("./img/tumb05.png") no-repeat center center;
-background-size: cover;
-}
-
-.page4-container .img-box-2 {
-background: url("./img/tumb06.png") no-repeat center center;
-background-size: cover;
-}
-
-.page4-container .img-box-3 {
-background: url("./img/tumb07.png") no-repeat center center;
-background-size: cover;
-}
-
-.page4-container .img-box-4 {
-background: url("./img/tumb08.png") no-repeat center center;
-background-size: cover;
-}
-
-.page4-container .img-box-5 {
-background: url("./img/TRABALHANDO.png") no-repeat center center;
-background-size: cover;
-}
-
-.page4-container .img-box-6 {
-background: url("./img/TRABALHANDO.png") no-repeat center center;
-background-size: cover;
-}
-
-.page4-container .img-box-7 {
-background: url("./img/TRABALHANDO.png") no-repeat center center;
-background-size: cover;
-}
-
-.page4-container .img-box-8 {
-background: url("./img/TRABALHANDO.png") no-repeat center center;
-background-size: cover;
-}
-
-/* Botões da página 3.1 */
-.page4-container .page3-btn {
-background: var(--main-color);
-color: #f1ede4;
-padding: 1rem 2rem;
-font-size: 1.6rem;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.page4-container .page3-btn:hover {
-background-color: #6c0f58;
-transform: scale(1.05);
-}
-
-/* RESPONSIVIDADE - telas menores */
-@media (max-width: 768px) {
-.page4-container {
-  margin-top: 20px;
-}
-
-.page4-container .images-grid {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-.page4-container .img-box {
-  width: 100%;
-  height: 180px;
-}
-}
-
-
-/* =========================================
- BOTÃO VOLTAR - PÁGINA 3
-========================================= */
-
-.back-button {
-position: fixed;   /* Fixa o botão na tela */
-bottom: 20px;      /* Distância do rodapé */
-left: 50px;        /* Distância da borda esquerda */
-z-index: 999;      /* Para garantir que fique acima de outros elementos */
-}
-
-.btn-back {
-background: var(--main-color);
-color: #f1ede4;
-padding: 1rem 2rem;
-font-size: 1.6rem;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-back:hover {
-background-color: #410e36; 
-transform: scale(1.05);
-}
-
-/* =========================================
- BOTÃO VOLTAR - PARA PÁGINAS
-========================================= */
-/* (Replicado, mas já definido acima — mantenha apenas uma instância se quiser) */
-
-.back-button {
-position: fixed;
-bottom: 20px;
-left: 50px;
-z-index: 999;
-}
-
-.btn-back {
-background: var(--main-color);
-color: #f1ede4;
-padding: 1rem 2rem;
-font-size: 1.6rem;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-back:hover {
-background-color: #6c0f58;
-transform: scale(1.05);
-}
-
-
-/* =========================================
- 4 PAGINA
- (Estilos específicos para 4pag_flat_01.html)
-========================================= */
-
-.page4-container {
-  /* Empurra para baixo, pois o header é fixo */
-  margin-top: 10px;
-  
-  /* Disposição lado a lado */
-  display: flex;
-  justify-content: space-between;
-  
-  /* Limita a largura total e centraliza */
-  max-width: 1700px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px; /* Espaço interno */
-  gap: 20px;     /* Espaço entre as duas caixas */
-}
-
-.viewer-box {
-  flex: 3; /* Ocupa ~3/4 do espaço */
-  min-height: 780px; /* ~30% maior que 600px */
-  border: 2px solid #ddd; /* Temporário para visualização (remova se quiser) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #edece6; /* Fundo suave, ajuste se quiser a mesma cor do site */
-  border-radius: 10px;
-}
-
-.menu-box {
-  flex: 1; /* Ocupa ~1/4 do espaço */
-  min-height: 780px; /* ~30% maior que 600px */
-  border: 2px solid #ddd; /* Temporário para visualização (remova se quiser) */
-  border-radius: 10px;
-  background-color: var(--bg); /* Mesma cor de fundo do site */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-/* Para organizar melhor os botões dentro do .menu-box */
-.menu-box .buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-/* Ajuste do <select> e <button> dentro do menu (opcional) */
-.menu-box select,
-.menu-box button {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  background: linear-gradient(135deg, #d4a373, #b1855b);
-  color: rgb(18, 18, 18);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 5px;
-}
-.menu-box select:hover,
-.menu-box button:hover {
-  background: linear-gradient(135deg, #b1855b, #8f6844);
-  transform: scale(1.05);
-}
-
-/* Model Viewer ocupa todo o espaço dentro de .viewer-box */
-model-viewer {
-  width: 80%;
-  height: 80%;
-  border-radius: 10px;
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .page4-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .viewer-box, .menu-box {
-    width: 100%;
-    min-height: 400px; /* Em telas menores, reduz a altura */
-  }
-}
-
-/* =========================================
- CUSTOM MENU PARA PERSONALIZAÇÃO PAGINA 5
-========================================= */
-
-.menu-box h3 {
-font-size: 1.8rem;
-margin-bottom: 10px;
-text-align: center;
-}
-
-.menu-section {
-margin-bottom: 20px;
-}
-
-.menu-section h4 {
-font-size: 1.6rem;
-margin-bottom: 8px;
-text-align: center;
-}
-
-.menu-buttons {
-display: flex;
-flex-wrap: wrap;
-gap: 10px;
-justify-content: center;
-}
-
-.menu-buttons button {
-background: var(--main-color);
-color: #f1ede4;
-padding: 0.8rem 1.2rem;
-font-size: 1.4rem;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.menu-buttons button:hover {
-background-color: #6c0f58;
-transform: scale(1.05);
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Page 4 - 3D Viewer</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Model Viewer (important for displaying the .glb) -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer"></script>
+
+    <!-- Fonts and other links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Style for the expandable menu */
+      .menu-box details {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .menu-box summary {
+        padding: 5px;
+        background: var(--main-color);
+        color: #e5eaf1;
+        font-size: 1.6rem;
+        cursor: pointer;
+        list-style: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      .menu-box summary:hover {
+        background-color: #470f47;
+        transform: scale(1.05);
+      }
+      .menu-box summary::-webkit-details-marker {
+        display: none;
+      }
+      .menu-box .menu-content {
+        padding: 10px;
+        background: #efece5;
+      }
+      .menu-box .menu-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .menu-box .menu-content ul li {
+        margin-bottom: 5px;
+      }
+
+      /* Accessory and color buttons */
+      .accessory-btn, .color-btn {
+        display: inline-block;
+        padding: 5px 12px;
+        font-size: 1.4rem;
+        text-decoration: none;
+        background: #bd9166;
+        color: #fff;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      .accessory-btn:hover, .color-btn:hover {
+        transform: scale(1.05);
+      }
+      .accessory-btn.on, .color-btn.on {
+        background-color: #451545;
+      }
+
+      .menu-box details[open] > summary {
+        border-bottom: 1px solid #ddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Page 4 Container (3D Viewer + Sidebar Menu) -->
+    <div class="page4-container">
+      <!-- 3D Viewer -->
+      <div class="viewer-box">
+        <model-viewer
+          id="viewer"
+          src="https://www.dl.dropboxusercontent.com/s/50voia2kh4y9ymq/01%20-%20BELT%20STITCHER5.glb?raw=1"
+          ar
+          auto-rotate
+          camera-controls
+          shadow-intensity="1"
+          exposure="1"
+          environment-image="neutral"
+          interaction-prompt="none"
+          alt="3D Hat"
+        >
+        </model-viewer>
+      </div>
+      
+      <!-- Sidebar Menu -->
+      <div class="menu-box">
+        <h3>Customization</h3>
+        
+        <!-- VARIANTS (Hat Color via Select) -->
+        <details>
+          <summary>Color Hat</summary>
+          <div class="menu-content">
+            <select id="variant-selector">
+              <option value="default">Default</option>
+            </select>
+          </div>
+        </details>
+        
+        <!-- FEATHERS -->
+        <details>
+          <summary>Feathers</summary>
+          <div class="menu-content">
+            <ul>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FETHER', this)">
+                  Feather Ostritch
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_EAGLE_1', this)">
+                  Feather Eagle 1
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_EAGLE_2', this)">
+                  Feather Eagle 2
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_FAIRY', this)">
+                  Feather Fairy
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_SPARROW', this)">
+                  Feather Sparrow
+                </a>
+              </li>
+            </ul>
+          </div>
+        </details>
+        
+        <!-- PINS -->
+        <details>
+          <summary>Pins</summary>
+          <div class="menu-content">
+            <ul>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('BOTTON_HAT_PIN', this)">
+                  Pin Botton
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('AMERICAN_HAT_PIN', this)">
+                  Pin American
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('ARROW_HAT_PIN', this)">
+                  Pin Arrow
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('STAR_HAT_PIN', this)">
+                  Pin Star
+                </a>
+              </li>
+            </ul>
+          </div>
+        </details>
+        
+        <!-- BELT - COLOR -->
+        <details>
+          <summary>Belt - Color</summary>
+          <div class="menu-content belt-colors">
+            <ul>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#0d0e0f', this, '.belt-colors .color-btn')">Black</a></li>    
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#391400', this, '.belt-colors .color-btn')">Brown</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#c6b097', this, '.belt-colors .color-btn')">Beige</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#3b2c42', this, '.belt-colors .color-btn')">Purple</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#6d2027', this, '.belt-colors .color-btn')">Vine</a></li>
+            </ul>
+          </div>
+        </details>
+        
+        <!-- INTERIOR - COLOR -->
+        <details>
+          <summary>Interior - Color</summary>
+          <div class="menu-content interior-colors">
+            <ul>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#0d0e0f', this, '.interior-colors .color-btn')">Black</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#391400', this, '.interior-colors .color-btn')">Brown</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#c6b097', this, '.interior-colors .color-btn')">Beige</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#3b2c42', this, '.interior-colors .color-btn')">Purple</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#6d2027', this, '.interior-colors .color-btn')">Vine</a></li>
+            </ul>
+          </div>
+        </details>
+        
+        <!-- STITCH -->
+        <details>
+          <summary>Stitch</summary>
+          <div class="menu-content stitch-colors">
+            <ul>
+              <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#FFFFFF', this, '.stitch-colors .color-btn')">White</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#0d0e0f', this, '.stitch-colors .color-btn')">Black</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#45322a', this, '.stitch-colors .color-btn')">Brown</a></li>
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+    </div>
+    
+    <!-- JavaScript for model manipulation -->
+    <script>
+      const viewer = document.getElementById('viewer');
+
+      // List of your accessory materials:
+      const accessoriesList = [
+        "FETHER",
+        "FEATHER_EAGLE_1",
+        "FEATHER_EAGLE_2",
+        "FEATHER_FAIRY",
+        "FEATHER_SPARROW",
+        "BOTTON_HAT_PIN",
+        "AMERICAN_HAT_PIN",
+        "ARROW_HAT_PIN",
+        "STAR_HAT_PIN"
+      ];
+
+      // Once the model is loaded, display materials and populate variants
+      viewer.addEventListener("load", () => {
+        console.log("Model loaded and ready.");
+        const allMaterials = viewer.model.materials;
+        console.log("Materials found in the model:");
+        allMaterials.forEach(mat => console.log(" -", mat.name));
+
+        // Populate the variants selector if available
+        const variantSelect = document.getElementById('variant-selector');
+        const variants = viewer.availableVariants;
+        if (variants && variants.length > 0) {
+          variants.forEach(name => {
+            const option = document.createElement('option');
+            option.value = name;
+            option.textContent = name;
+            variantSelect.appendChild(option);
+          });
+        }
+
+        // 1) Initialize all accessories to alpha=0 (OFF)
+        accessoriesList.forEach(accessoryName => {
+          setAccessoryAlpha(accessoryName, 0);
+        });
+
+        // 2) Immediately set the hat color to Beige
+        //    Change "HAT" to the actual material name if needed
+        changeColor("HAT", "#F5E0C3");
+      });
+
+      // Update the selected variant
+      document.getElementById('variant-selector').addEventListener('input', (event) => {
+        viewer.variantName = event.target.value === 'default' ? null : event.target.value;
+      });
+
+      // Helper function to convert hexadecimal to RGBA (values between 0 and 1)
+      function hexToRGBA(hex) {
+        hex = hex.replace("#", "");
+        let bigint = parseInt(hex, 16);
+        let r = ((bigint >> 16) & 255) / 255;
+        let g = ((bigint >> 8) & 255) / 255;
+        let b = (bigint & 255) / 255;
+        return [r, g, b, 1];
+      }
+
+      // Function to change a material's color
+      function changeColor(materialName, hexColor) {
+        const material = viewer.model.getMaterialByName(materialName);
+        if (material && material.pbrMetallicRoughness) {
+          material.pbrMetallicRoughness.setBaseColorFactor(hexToRGBA(hexColor));
+          console.log(`changeColor: ${materialName} -> ${hexColor}`);
+        } else {
+          console.warn("Material not found:", materialName);
+        }
+      }
+
+      // Set alpha for a given accessory (0=OFF, 1=ON)
+      function setAccessoryAlpha(materialName, alphaValue) {
+        const material = viewer.model.getMaterialByName(materialName);
+        if (material && material.pbrMetallicRoughness) {
+          material.setAlphaMode && material.setAlphaMode("BLEND");
+          let factor = material.pbrMetallicRoughness.baseColorFactor;
+          factor[3] = alphaValue;
+          material.pbrMetallicRoughness.setBaseColorFactor(factor);
+          console.log(`setAccessoryAlpha: ${materialName} -> alpha = ${alphaValue}`);
+        }
+      }
+
+      // Toggle the visibility (alpha) of an accessory
+      // element = the <a> that was clicked
+      function toggleAccessory(materialName, element) {
+        const material = viewer.model.getMaterialByName(materialName);
+        if (!material || !material.pbrMetallicRoughness) {
+          console.warn("Accessory material not found:", materialName);
+          return;
+        }
+
+        material.setAlphaMode && material.setAlphaMode("BLEND");
+
+        let factor = material.pbrMetallicRoughness.baseColorFactor;
+        // If it's currently fully visible (alpha=1), turn it OFF (alpha=0)
+        // Else, turn it ON (alpha=1)
+        const newAlpha = (factor[3] === 1) ? 0 : 1;
+        factor[3] = newAlpha;
+        material.pbrMetallicRoughness.setBaseColorFactor(factor);
+        console.log(`toggleAccessory: ${materialName} -> alpha = ${newAlpha}`);
+
+        // Toggle the .on class to change the button appearance
+        if (newAlpha === 1) {
+          element.classList.add("on");
+        } else {
+          element.classList.remove("on");
+        }
+      }
+
+      /**
+       * Radio-like color selection for Belt, Interior, Stitch, etc.
+       *  - Removes the .on class from all color buttons in the same group
+       *  - Applies .on to this button
+       *  - Calls changeColor() on the target material
+       */
+      function selectColor(materialName, hexColor, element, groupSelector) {
+        // Turn OFF all buttons in the same group
+        const groupBtns = document.querySelectorAll(groupSelector);
+        groupBtns.forEach(btn => btn.classList.remove("on"));
+
+        // Turn ON the clicked button
+        element.classList.add("on");
+
+        // Change the color
+        changeColor(materialName, hexColor);
+      }
+    </script>
+  </body>
+</html>
