@@ -545,7 +545,7 @@ transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-back:hover {
-background-color: #6c0f58; 
+background-color: #410e36; 
 transform: scale(1.05);
 }
 
@@ -587,7 +587,7 @@ transform: scale(1.05);
   /* Empurra para baixo, pois o header é fixo */
   margin-top: 10px;
   
-  /* Disposição lado a lado (desktop) */
+  /* Disposição lado a lado */
   display: flex;
   justify-content: space-between;
   
@@ -595,110 +595,76 @@ transform: scale(1.05);
   max-width: 1700px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
-  gap: 20px;
+  padding: 20px; /* Espaço interno */
+  gap: 20px;     /* Espaço entre as duas caixas */
 }
 
 .viewer-box {
-  flex: 3; /* Ocupa ~3/4 do espaço no desktop */
-  min-height: 780px; /* Altura mínima no desktop */
-  border: 2px solid #ddd;
+  flex: 3; /* Ocupa ~3/4 do espaço */
+  min-height: 780px; /* ~30% maior que 600px */
+  border: 2px solid #ddd; /* Temporário para visualização (remova se quiser) */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f9f8f6;
+  background-color: #edece6; /* Fundo suave, ajuste se quiser a mesma cor do site */
   border-radius: 10px;
 }
 
 .menu-box {
-  flex: 1; /* Ocupa ~1/4 do espaço no desktop */
-  min-height: 780px; /* Altura mínima no desktop */
-  border: 2px solid #ddd;
+  flex: 1; /* Ocupa ~1/4 do espaço */
+  min-height: 780px; /* ~30% maior que 600px */
+  border: 2px solid #ddd; /* Temporário para visualização (remova se quiser) */
   border-radius: 10px;
-  background-color: var(--bg);
+  background-color: var(--bg); /* Mesma cor de fundo do site */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
+/* Para organizar melhor os botões dentro do .menu-box */
+.menu-box .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Ajuste do <select> e <button> dentro do menu (opcional) */
+.menu-box select,
+.menu-box button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  background: linear-gradient(135deg, #d4a373, #b1855b);
+  color: rgb(18, 18, 18);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 5px;
+}
+.menu-box select:hover,
+.menu-box button:hover {
+  background: linear-gradient(135deg, #b1855b, #8f6844);
+  transform: scale(1.05);
+}
+
 /* Model Viewer ocupa todo o espaço dentro de .viewer-box */
 model-viewer {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   border-radius: 10px;
 }
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
-
-  /* Coloca o container em coluna para empilhar Viewer e Menu */
   .page4-container {
     flex-direction: column;
-    /* Ocupa toda a altura da tela no mobile */
-    height: 100vh;
-    /* Remove ou reduz o gap para evitar espaço extra */
-    gap: 0;
-    padding: 0; /* Opcional: remover padding no mobile */
-    margin-top: 0; /* Se quiser remover o margin-top no mobile */
+    gap: 20px;
   }
-
-  /* Viewer = 60% da tela (ajuste se quiser mais ou menos) */
-  .viewer-box {
-    flex: none; /* Sobrepõe o 'flex:3' do desktop */
-    height: 60vh;
-    min-height: auto; /* Remove o min-height fixo do desktop */
-    border: none; 
-    border-radius: 0;
-  }
-
-  /* Menu = 40% da tela */
-  .menu-box {
-    flex: none; /* Sobrepõe o 'flex:1' do desktop */
-    height: 40vh;
-    min-height: auto;
-    border: none; 
-    border-radius: 0;
-    box-shadow: none;
-    overflow-y: auto;
-    padding: 10px;
-  }
-
-  /* Diminui pela metade o tamanho dos títulos no menu */
-  .menu-box h3 {
-    font-size: 1.2rem; /* Antes era 1.4rem, reduzido ~15% */
-    margin-bottom: 6px;
-    text-align: center;
-  }
-
-  /* Resumo dos <details> ainda menor */
-  .menu-box summary {
-    font-size: 1rem; /* Antes era 1.2rem, ~reduzido pela metade */
-    padding: 4px;    /* Antes era 8px, agora metade */
-  }
-
-  /* Ajusta o padding do conteúdo interno dos detalhes */
-  .menu-box .menu-content {
-    padding: 4px; /* Metade de 8px */
-  }
-
-  /* Ajusta os elementos interativos (select e button) dentro do menu */
-  .menu-box select,
-  .menu-box button {
-    padding: 4px;      /* Metade de 8px */
-    font-size: 1rem;   /* Menor fonte */
-    border-radius: 4px; 
-  }
-
-  /* Reduz o tamanho dos botões de acessórios e cores (metade) */
-  .accessory-btn,
-  .color-btn {
-    padding: 3px 6px;  /* Metade de 6px 10px */
-    font-size: 0.9rem; /* Antes 1.2rem, agora ~25% menor */
+  .viewer-box, .menu-box {
+    width: 100%;
+    min-height: 400px; /* Em telas menores, reduz a altura */
   }
 }
-
-
-
-
 
 /* =========================================
  CUSTOM MENU PARA PERSONALIZAÇÃO PAGINA 5
