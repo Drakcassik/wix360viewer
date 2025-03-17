@@ -650,11 +650,11 @@ model-viewer {
   /* Menu = 40% da tela */
   .menu-box {
     flex: none; /* Sobrepõe o 'flex:1' do desktop */
-    height: 30vh;
+    height: 50vh;
     min-height: auto; /* Remove o min-height fixo do desktop */
     border: 2px solid #ddd;
     overflow-y: auto; /* Permite rolagem se o conteúdo for maior que o container */
-    padding: 5px; /* Reduz o padding para deixar o menu mais compacto */
+    padding: 1px; /* Reduz o padding para deixar o menu mais compacto */
   }
 
   /* Ajusta o tamanho dos títulos no menu */
