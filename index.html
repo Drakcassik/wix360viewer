@@ -28,16 +28,16 @@
         overflow: hidden;
       }
       .menu-box summary {
-        padding: 5px;
+        padding: 10px;
         background: var(--main-color);
-        color: #e5eaf1;
+        color: #f1ede4;
         font-size: 1.6rem;
         cursor: pointer;
         list-style: none;
         transition: background-color 0.3s ease, transform 0.3s ease;
       }
       .menu-box summary:hover {
-        background-color: #470f47;
+        background-color: #800080;
         transform: scale(1.05);
       }
       .menu-box summary::-webkit-details-marker {
@@ -59,19 +59,19 @@
       /* Accessory and color buttons */
       .accessory-btn, .color-btn {
         display: inline-block;
-        padding: 5px 12px;
+        padding: 8px 12px;
         font-size: 1.4rem;
         text-decoration: none;
-        background: #bd9166;
+        background: #000;
         color: #fff;
-        border-radius: 10px;
+        border-radius: 5px;
         transition: background-color 0.3s ease, transform 0.3s ease;
       }
       .accessory-btn:hover, .color-btn:hover {
         transform: scale(1.05);
       }
       .accessory-btn.on, .color-btn.on {
-        background-color: #451545;
+        background-color: #800080;
       }
 
       .menu-box details[open] > summary {
@@ -182,11 +182,11 @@
           <summary>Belt - Color</summary>
           <div class="menu-content belt-colors">
             <ul>
-              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#0d0e0f', this, '.belt-colors .color-btn')">Black</a></li>    
-              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#391400', this, '.belt-colors .color-btn')">Brown</a></li>
-              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#c6b097', this, '.belt-colors .color-btn')">Beige</a></li>
-              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#3b2c42', this, '.belt-colors .color-btn')">Purple</a></li>
-              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#6d2027', this, '.belt-colors .color-btn')">Vine</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#000000', this, '.belt-colors .color-btn')">Black</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#8B4513', this, '.belt-colors .color-btn')">Brown</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#F5E0C3', this, '.belt-colors .color-btn')">Beige</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#800080', this, '.belt-colors .color-btn')">Purple</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#FFFFFF', this, '.belt-colors .color-btn')">White</a></li>
             </ul>
           </div>
         </details>
@@ -196,11 +196,11 @@
           <summary>Interior - Color</summary>
           <div class="menu-content interior-colors">
             <ul>
-              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#0d0e0f', this, '.interior-colors .color-btn')">Black</a></li>
-              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#391400', this, '.interior-colors .color-btn')">Brown</a></li>
-              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#c6b097', this, '.interior-colors .color-btn')">Beige</a></li>
-              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#3b2c42', this, '.interior-colors .color-btn')">Purple</a></li>
-              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#6d2027', this, '.interior-colors .color-btn')">Vine</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#000000', this, '.interior-colors .color-btn')">Black</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#8B4513', this, '.interior-colors .color-btn')">Brown</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#F5E0C3', this, '.interior-colors .color-btn')">Beige</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#800080', this, '.interior-colors .color-btn')">Purple</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#FFFFFF', this, '.interior-colors .color-btn')">White</a></li>
             </ul>
           </div>
         </details>
@@ -211,8 +211,8 @@
           <div class="menu-content stitch-colors">
             <ul>
               <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#FFFFFF', this, '.stitch-colors .color-btn')">White</a></li>
-              <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#0d0e0f', this, '.stitch-colors .color-btn')">Black</a></li>
-              <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#45322a', this, '.stitch-colors .color-btn')">Brown</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#000000', this, '.stitch-colors .color-btn')">Black</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#8B4513', this, '.stitch-colors .color-btn')">Brown</a></li>
             </ul>
           </div>
         </details>
