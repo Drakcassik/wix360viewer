@@ -1,7 +1,7 @@
 :root {
   --main-color: #353434;
   --black: #cbcbcb;
-  --bg: #f1ede4;
+  --bg: #f0f0f0;
   --border: 0.1rem solid rgba(28, 28, 28, 0.3);
   font-size: 10px;
 }
@@ -659,20 +659,20 @@ model-viewer {
 
   /* Ajusta o tamanho dos títulos no menu */
   .menu-box h3 {
-    font-size: 1.4rem;
+    font-size: 1.0rem;
     margin-bottom: 8px;
     text-align: center;
   }
 
   /* Ajusta o tamanho dos summaries dos details */
   .menu-box summary {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     padding: 8px;
   }
 
   /* Ajusta o padding do conteúdo interno dos detalhes */
   .menu-box .menu-content {
-    padding: 8px;
+    padding: 5px;
   }
 
   /* Ajusta os elementos interativos (select e button) dentro do menu */
@@ -686,7 +686,7 @@ model-viewer {
   /* Reduz o tamanho dos botões de acessórios e cores */
   .accessory-btn,
   .color-btn {
-    padding: 6px 10px;
+    padding: 4px 10px;
     font-size: 1rem;
   }
 }
