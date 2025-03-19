@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Page 4 - 3D Viewer</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Model Viewer (important for displaying the .glb) -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer"></script>
+
+    <!-- Fonts and other links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Style for the expandable menu */
+      .menu-box details {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .menu-box summary {
+        padding: 10px;
+        background: var(--main-color);
+        color: #f1ede4;
+        font-size: 1.6rem;
+        cursor: pointer;
+        list-style: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      .menu-box summary:hover {
+        background-color: #231323;
+        transform: scale(1.05);
+      }
+      .menu-box summary::-webkit-details-marker {
+        display: none;
+      }
+      .menu-box .menu-content {
+        padding: 10px;
+        background: #efece5;
+      }
+      .menu-box .menu-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .menu-box .menu-content ul li {
+        margin-bottom: 5px;
+      }
+
+      /* Accessory and color buttons */
+      .accessory-btn, .color-btn {
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 1.4rem;
+        text-decoration: none;
+        background: #716240;
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      .accessory-btn:hover, .color-btn:hover {
+        transform: scale(1.05);
+      }
+      .accessory-btn.on, .color-btn.on {
+        background-color: #270e27;
+      }
+
+      .menu-box details[open] > summary {
+        border-bottom: 1px solid #ddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Page 4 Container (3D Viewer + Sidebar Menu) -->
+    <div class="page4-container">
+      <!-- 3D Viewer -->
+      <div class="viewer-box">
+        <model-viewer
+          id="viewer"
+          src="https://www.dl.dropboxusercontent.com/s/emdvpw028pz8kur/06%20-%20HATBAND%20METAL%20FOLDED.glb?raw=1"
+          ar
+          auto-rotate
+          camera-controls
+          shadow-intensity="1"
+          exposure="1"
+          environment-image="neutral"
+          interaction-prompt="none"
+          alt="3D Hat"
+        >
+        </model-viewer>
+      </div>
+      
+      <!-- Sidebar Menu -->
+      <div class="menu-box">
+        <h3>Customization</h3>
+        
+        <!-- VARIANTS (Hat Color via Select) -->
+        <details>
+          <summary>Color Hat</summary>
+          <div class="menu-content">
+            <select id="variant-selector">
+              <option value="default">Default</option>
+            </select>
+          </div>
+        </details>
+        
+        <!-- FEATHERS -->
+        <details>
+          <summary>Feathers</summary>
+          <div class="menu-content">
+            <ul>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FETHER', this)">
+                  Feather Ostritch
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_EAGLE_1', this)">
+                  Feather Eagle 1
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_EAGLE_2', this)">
+                  Feather Eagle 2
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_FAIRY', this)">
+                  Feather Fairy
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('FEATHER_SPARROW', this)">
+                  Feather Sparrow
+                </a>
+              </li>
+            </ul>
+          </div>
+        </details>
+        
+        <!-- PINS -->
+        <details>
+          <summary>Pins</summary>
+          <div class="menu-content">
+            <ul>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('BOTTON_HAT_PIN', this)">
+                  Pin Botton
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('AMERICAN_HAT_PIN', this)">
+                  Pin American
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('ARROW_HAT_PIN', this)">
+                  Pin Arrow
+                </a>
+              </li>
+              <li>
+                <a href="#" class="accessory-btn" onclick="toggleAccessory('STAR_HAT_PIN', this)">
+                  Pin Star
+                </a>
+              </li>
+            </ul>
+          </div>
+        </details>
+        
+        <!-- BELT - COLOR -->
+        <details>
+          <summary>Belt - Color</summary>
+          <div class="menu-content belt-colors">
+            <ul>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#000000', this, '.belt-colors .color-btn')">Black</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#8B4513', this, '.belt-colors .color-btn')">Brown</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#F5E0C3', this, '.belt-colors .color-btn')">Beige</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#800080', this, '.belt-colors .color-btn')">Purple</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('BELT', '#FFFFFF', this, '.belt-colors .color-btn')">White</a></li>
+            </ul>
+          </div>
+        </details>
+        
+        <!-- INTERIOR - COLOR -->
+        <details>
+          <summary>Interior - Color</summary>
+          <div class="menu-content interior-colors">
+            <ul>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#000000', this, '.interior-colors .color-btn')">Black</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#8B4513', this, '.interior-colors .color-btn')">Brown</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#F5E0C3', this, '.interior-colors .color-btn')">Beige</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#800080', this, '.interior-colors .color-btn')">Purple</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('LEATHER_INTERN', '#FFFFFF', this, '.interior-colors .color-btn')">White</a></li>
+            </ul>
+          </div>
+        </details>
+        
+        <!-- STITCH -->
+        <details>
+          <summary>Stitch</summary>
+          <div class="menu-content stitch-colors">
+            <ul>
+              <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#FFFFFF', this, '.stitch-colors .color-btn')">White</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#000000', this, '.stitch-colors .color-btn')">Black</a></li>
+              <li><a href="#" class="color-btn" onclick="selectColor('STITCH', '#8B4513', this, '.stitch-colors .color-btn')">Brown</a></li>
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+    </div>
+    
+    <!-- JavaScript for model manipulation -->
+    <script>
+      const viewer = document.getElementById('viewer');
+
+      // List of your accessory materials:
+      const accessoriesList = [
+        "FETHER",
+        "FEATHER_EAGLE_1",
+        "FEATHER_EAGLE_2",
+        "FEATHER_FAIRY",
+        "FEATHER_SPARROW",
+        "BOTTON_HAT_PIN",
+        "AMERICAN_HAT_PIN",
+        "ARROW_HAT_PIN",
+        "STAR_HAT_PIN"
+      ];
+
+      // Once the model is loaded, display materials and populate variants
+      viewer.addEventListener("load", () => {
+        console.log("Model loaded and ready.");
+        const allMaterials = viewer.model.materials;
+        console.log("Materials found in the model:");
+        allMaterials.forEach(mat => console.log(" -", mat.name));
+
+        // Populate the variants selector if available
+        const variantSelect = document.getElementById('variant-selector');
+        const variants = viewer.availableVariants;
+        if (variants && variants.length > 0) {
+          variants.forEach(name => {
+            const option = document.createElement('option');
+            option.value = name;
+            option.textContent = name;
+            variantSelect.appendChild(option);
+          });
+        }
+
+        // 1) Initialize all accessories to alpha=0 (OFF)
+        accessoriesList.forEach(accessoryName => {
+          setAccessoryAlpha(accessoryName, 0);
+        });
+
+        // 2) Immediately set the hat color to Beige
+        //    Change "HAT" to the actual material name if needed
+        changeColor("HAT", "#F5E0C3");
+      });
+
+      // Update the selected variant
+      document.getElementById('variant-selector').addEventListener('input', (event) => {
+        viewer.variantName = event.target.value === 'default' ? null : event.target.value;
+      });
+
+      // Helper function to convert hexadecimal to RGBA (values between 0 and 1)
+      function hexToRGBA(hex) {
+        hex = hex.replace("#", "");
+        let bigint = parseInt(hex, 16);
+        let r = ((bigint >> 16) & 255) / 255;
+        let g = ((bigint >> 8) & 255) / 255;
+        let b = (bigint & 255) / 255;
+        return [r, g, b, 1];
+      }
+
+      // Function to change a material's color
+      function changeColor(materialName, hexColor) {
+        const material = viewer.model.getMaterialByName(materialName);
+        if (material && material.pbrMetallicRoughness) {
+          material.pbrMetallicRoughness.setBaseColorFactor(hexToRGBA(hexColor));
+          console.log(`changeColor: ${materialName} -> ${hexColor}`);
+        } else {
+          console.warn("Material not found:", materialName);
+        }
+      }
+
+      // Set alpha for a given accessory (0=OFF, 1=ON)
+      function setAccessoryAlpha(materialName, alphaValue) {
+        const material = viewer.model.getMaterialByName(materialName);
+        if (material && material.pbrMetallicRoughness) {
+          material.setAlphaMode && material.setAlphaMode("BLEND");
+          let factor = material.pbrMetallicRoughness.baseColorFactor;
+          factor[3] = alphaValue;
+          material.pbrMetallicRoughness.setBaseColorFactor(factor);
+          console.log(`setAccessoryAlpha: ${materialName} -> alpha = ${alphaValue}`);
+        }
+      }
+
+      // Toggle the visibility (alpha) of an accessory
+      // element = the <a> that was clicked
+      function toggleAccessory(materialName, element) {
+        const material = viewer.model.getMaterialByName(materialName);
+        if (!material || !material.pbrMetallicRoughness) {
+          console.warn("Accessory material not found:", materialName);
+          return;
+        }
+
+        material.setAlphaMode && material.setAlphaMode("BLEND");
+
+        let factor = material.pbrMetallicRoughness.baseColorFactor;
+        // If it's currently fully visible (alpha=1), turn it OFF (alpha=0)
+        // Else, turn it ON (alpha=1)
+        const newAlpha = (factor[3] === 1) ? 0 : 1;
+        factor[3] = newAlpha;
+        material.pbrMetallicRoughness.setBaseColorFactor(factor);
+        console.log(`toggleAccessory: ${materialName} -> alpha = ${newAlpha}`);
+
+        // Toggle the .on class to change the button appearance
+        if (newAlpha === 1) {
+          element.classList.add("on");
+        } else {
+          element.classList.remove("on");
+        }
+      }
+
+      /**
+       * Radio-like color selection for Belt, Interior, Stitch, etc.
+       *  - Removes the .on class from all color buttons in the same group
+       *  - Applies .on to this button
+       *  - Calls changeColor() on the target material
+       */
+      function selectColor(materialName, hexColor, element, groupSelector) {
+        // Turn OFF all buttons in the same group
+        const groupBtns = document.querySelectorAll(groupSelector);
+        groupBtns.forEach(btn => btn.classList.remove("on"));
+
+        // Turn ON the clicked button
+        element.classList.add("on");
+
+        // Change the color
+        changeColor(materialName, hexColor);
+      }
+    </script>
+  </body>
+</html>
